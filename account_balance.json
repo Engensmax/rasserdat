@@ -1,0 +1,72 @@
+{
+  "balance": {
+    "Max": 100028.41,
+    "Carine": 100037.2
+  },
+  "logs": [
+    {
+      "name": "Carine",
+      "amount": 15,
+      "top_type": "Rechnungen",
+      "type": "Einkaufen",
+      "comment": "",
+      "date": "2020-03-21T16:07:36.545Z"
+    },
+    {
+      "name": "Max",
+      "amount": 15.8,
+      "top_type": "Rechnungen",
+      "type": "Wasser",
+      "comment": "",
+      "date": "2020-03-21T16:11:23.314Z"
+    },
+    {
+      "name": "Carine",
+      "amount": 15,
+      "top_type": "Rechnungen",
+      "type": "Einkaufen",
+      "comment": "",
+      "date": "2020-03-21T16:11:32.357Z"
+    },
+    {
+      "name": "Carine",
+      "amount": 100000,
+      "top_type": "Rechnungen",
+      "type": "Cat",
+      "comment": "Dullahs! $$$",
+      "date": "2020-03-21T16:13:27.863Z"
+    },
+    {
+      "name": "Max",
+      "amount": 11.4,
+      "top_type": "Rechnungen",
+      "type": "Einkaufen",
+      "comment": "",
+      "date": "2020-03-21T16:24:30.594Z"
+    },
+    {
+      "name": "Max",
+      "amount": 1.21,
+      "top_type": "Rechnungen",
+      "type": "Einkaufen",
+      "comment": "",
+      "date": "2020-03-21T16:24:36.433Z"
+    },
+    {
+      "name": "Max",
+      "amount": 100000,
+      "top_type": "Rechnungen",
+      "type": "Cat",
+      "comment": "",
+      "date": "2020-03-21T16:24:46.812Z"
+    },
+    {
+      "name": "Carine",
+      "amount": 7.2,
+      "top_type": "Rechnungen",
+      "type": "Einkaufen",
+      "comment": "Spinot",
+      "date": "2020-03-21T17:03:42.010Z"
+    }
+  ]
+}

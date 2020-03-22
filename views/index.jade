@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  h2 Buabub Mark II
+  if message
+    div.alert.alert-warning #{message}
+  div.alert.alert-primary #{balance}
+  
+  form(method='POST' action='')
+    select.browser-default.custom-select(type="text", name="name")
+      option Carine
+      option Max
+    hr
+    select.browser-default.custom-select(name="type")
+      optgroup(label="Food")
+        option(value="Einkaufen") Einkaufen
+        option(value="Resti") Resti
+      optgroup(label="Stuff")
+        option(value="Cat") Cat
+        option(value="Other") Other
+      optgroup(label="Rechnungen")
+        option(value="Miete") Miete
+        option(value="Internet") Internet
+        option(value="Heizung") Heizung
+        option(value="Wasser") Wasser
+        option(value="Strom") Strom
+    hr
+    .form-group
+      input#amount.form-control(type='number',step="0.01", placeholder='amount', name='amount')
+    hr
+    .form-group
+      input#name.form-control(type='text', placeholder="Comment", name='comment')
+      
+    button.btn.btn-primary(type='submit') Submit

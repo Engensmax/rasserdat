@@ -1,0 +1,11 @@
+body {
+  background-image: url('../images/background_cat.jpg');
+  backgrond-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}

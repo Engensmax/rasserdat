@@ -12,7 +12,7 @@ function deposit(name, amount, top_type, type, comment) {
 }
 exports.deposit = deposit;
 function current_balance() {
-    var m_to_c_balance = db.get('balance').get("Max") - db.get('balance').get("Carine");
+    var m_to_c_balance = db.get('balance').get("Max") - db.get('balance').get("Carine")/2;
     if (m_to_c_balance > 0) {
         return "Carine schuldet Max " + Math.round(m_to_c_balance) + " Fr";
     }

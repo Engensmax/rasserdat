@@ -22,7 +22,7 @@ function current_balance() {
 }
 exports.current_balance = current_balance;
 function get_logs() {
-    return db.get('logs');
+    return db.get('logs').value();
 }
 exports.get_logs = get_logs;
 //# sourceMappingURL=lowdb_access.js.map

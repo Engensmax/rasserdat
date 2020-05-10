@@ -22,5 +22,5 @@ export function current_balance(){
 }
 
 export function get_logs(){
-  return db.get('logs')
+  return db.get('logs').value()
 }

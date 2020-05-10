@@ -12,7 +12,7 @@ function deposit(name, amount, top_type, type, comment) {
 }
 exports.deposit = deposit;
 function current_balance() {
-    var m_to_c_balance = db.get('balance').get("Max") - db.get('balance').get("Carine")/2;
+    var m_to_c_balance = db.get('balance').get("Max") - db.get('balance').get("Carine");
     if (m_to_c_balance > 0) {
         return "Carine schuldet Max " + Math.round(m_to_c_balance) + " Fr";
     }
@@ -21,4 +21,8 @@ function current_balance() {
     }
 }
 exports.current_balance = current_balance;
+function get_logs() {
+    return db.get('logs').value();
+}
+exports.get_logs = get_logs;
 //# sourceMappingURL=lowdb_access.js.map

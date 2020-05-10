@@ -1,0 +1,15 @@
+extends layout
+
+block content
+
+
+  table.table.table-striped(style="background-color: rgba(255,255,255,0.7)")
+    thead
+      tr
+        each element, key in recent[0]
+          th(scope="col")= key
+    tbody
+      each entry in recent
+        tr
+          each element in entry
+            td= element

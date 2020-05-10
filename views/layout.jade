@@ -4,6 +4,17 @@ html
     title Buabub Mark II
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+
     meta(name="viewport",content="width=device-width, initial-scale=1")
   body
+    nav.navbar.navbar-default(style="background-color: rgba(255,255,255,0.7)")
+      ul.navbar-nav
+        li.nav-item
+          a.nav-link(href='/') Buabub
+      ul.navbar-nav
+        li.nav-item
+          a.nav-link(href='/balance') Balance
+      ul.navbar-nav
+        li.nav-item
+          a.nav-link(href='/recent') Recent Entries
     block content

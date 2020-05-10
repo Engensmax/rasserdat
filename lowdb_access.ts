@@ -20,3 +20,7 @@ export function current_balance(){
     return `Max schuldet Carine ${Math.round(-m_to_c_balance)} Fr`
   }
 }
+
+export function get_logs(){
+  return db.get('logs')
+}

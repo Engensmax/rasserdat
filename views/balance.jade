@@ -1,0 +1,74 @@
+extends layout
+
+block content
+  script(src='/scripts/chart.min.js')
+  script(src='/scripts/chartjs-plugin-colorschemes.min.js')
+  script(src='/scripts/underscore-min.js')
+  script(src='/scripts/lodash.min.js')
+  script(src='/scripts/moment.min.js')
+  script(src='/scripts/moment-timezone-with-data.min.js')
+  canvas(id="myChart",width="400",height="400")
+
+  script.
+    var logs = !{JSON.stringify(logs)};
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var keys = ["Einkaufen", "Resti", "Cat", "Other", "Heizung", "Wasser", "Strom"];
+    keys = keys.sort();
+    var grouped_by_month = _.groupBy(logs,
+      item => moment(item.date).month());
+      // example: 2020-03-21T17:03:42.010Z
+    var datasets_monthly = [];
+    _.forEach(grouped_by_month,function(group, month){
+      var grouped = _.mapValues(_.groupBy(group, 'type'),
+        clist => clist.map(group => _.omit(group, 'type')));
+      var sums = {};
+      _.forEach(grouped,(category, key) => sums[key]=(_.sumBy(category,'amount')));
+
+      // fill up with missing keys
+      _.forEach(keys,function(key){
+        if (!(key in sums)){
+          sums[key] = 0;
+        }
+      })
+
+      var ordered = {};
+      _(sums).keys().sort().each(function (key) {
+        ordered[key] = sums[key];
+      });
+
+      sums = ordered;
+
+
+      values = [];
+      _.forEach(sums, value => values.push(value))
+
+      datasets_monthly.push({
+          label: months[month],
+          data: values,
+          borderWidth: 1,
+          fillColor: "rgba(0,60,100,1)",
+      })
+    });
+
+
+
+    //var grouped = _.mapValues(_.groupBy(logs, 'type'),
+    //  clist => clist.map(logs => _.omit(logs, 'type')));
+
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      title: { text: "Overview Buabub"},
+      data: {
+          labels: keys,
+          datasets: datasets_monthly
+      },
+      options: {
+        plugins: {
+          colorschemes: {
+            scheme: 'brewer.Paired12'
+          }
+        }
+      }
+
+    });

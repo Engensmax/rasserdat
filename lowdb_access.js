@@ -14,15 +14,15 @@ exports.deposit = deposit;
 function current_balance() {
     var m_to_c_balance = db.get('balance').get("Max") - db.get('balance').get("Carine");
     if (m_to_c_balance > 0) {
-        return "Carine schuldet Max " + Math.round(m_to_c_balance) + " Fr";
+        return "Carine schuldet Max " + Math.round(m_to_c_balance / 2) + " Fr";
     }
     else {
-        return "Max schuldet Carine " + Math.round(-m_to_c_balance) + " Fr";
+        return "Max schuldet Carine " + Math.round(-m_to_c_balance / 2) + " Fr";
     }
 }
 exports.current_balance = current_balance;
 function get_logs() {
-    return db.get('logs').value();
+    return db.get('logs');
 }
 exports.get_logs = get_logs;
 //# sourceMappingURL=lowdb_access.js.map

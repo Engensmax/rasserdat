@@ -15,9 +15,9 @@ export function deposit(name: string, amount: number, top_type: string, type: st
 export function current_balance(){
   var m_to_c_balance:number = db.get('balance').get("Max")-db.get('balance').get("Carine")
   if (m_to_c_balance > 0) {
-    return `Carine schuldet Max ${Math.round(m_to_c_balance)} Fr`
+    return `Carine schuldet Max ${Math.round(m_to_c_balance/2)} Fr`
   } else {
-    return `Max schuldet Carine ${Math.round(-m_to_c_balance)} Fr`
+    return `Max schuldet Carine ${Math.round(-m_to_c_balance/2)} Fr`
   }
 }
 

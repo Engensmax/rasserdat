@@ -15,7 +15,7 @@
     "jade": "~1.11.0",
     "lodash": "^4.17.15",
     "lowdb": "^1.0.0",
-    "moment": "^2.25.3",
+    "moment": "^2.29.4",
     "moment-timezone": "^0.5.28",
     "morgan": "~1.9.1",
     "underscore": "^1.10.2"
